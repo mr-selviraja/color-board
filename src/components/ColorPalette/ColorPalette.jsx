@@ -1,26 +1,13 @@
 import React, { Component } from 'react';
-import Color from './Color';
-import styled from 'styled-components';
-
-const StyledColorPalette = styled.section`
-  flex-grow: 1;
-  display: flex;
-  width: 100vw;
-  height: 100%;
-
-  @media screen and (max-width: 720px) {
-    .color-palette {
-      flex-direction: column;
-    }
-  }
-`;
+import Color from '../Color/Color';
+import ColorPaletteStyles from './ColorPalette.module.css';
 
 export default class ColorPalette extends Component {
   render() {
     const { palette, onColorCopied } = this.props;
 
     return (
-      <StyledColorPalette className='color-palette'>
+      <section className={ColorPaletteStyles.colorPalette}>
         {palette.map((colorValue, index) => {
           return (
             <Color
@@ -30,7 +17,7 @@ export default class ColorPalette extends Component {
             />
           );
         })}
-      </StyledColorPalette>
+      </section>
     );
   }
 }

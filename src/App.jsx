@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import PalettePreference from './components/PalettePreference';
-import ColorPalette from './components/ColorPalette';
-import Loader from './components/Loader';
-import Modal from './components/Modal';
+import Header from './components/Header/Header';
+import PalettePreference from './components/PalettePreference/PalettePreference';
+import ColorPalette from './components/ColorPalette/ColorPalette';
+import Loader from './components/Loader/Loader';
+import Modal from './components/Modal/Modal';
 import styled from 'styled-components';
 
 const StyledApp = styled.div`

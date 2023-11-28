@@ -1,0 +1,7 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-accent);
+  padding-top: 15%;
+}

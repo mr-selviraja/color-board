@@ -1,54 +1,6 @@
 import React, { Component } from 'react';
 import { AiFillThunderbolt } from 'react-icons/ai';
-import styled from 'styled-components';
-
-const StyledPalettePreference = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3.5rem;
-  padding: 1.5rem 0;
-`;
-
-const StyledPalettePreferenceBase = styled.label`
-  display: flex;
-  gap: 1rem;
-`;
-
-const StyledPalettePreferenceScheme = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-`;
-
-const StyledPalettePreferenceButton = styled.button`
-  padding: 1rem 1.5rem;
-  border-radius: 1rem;
-  border: none;
-  font-family: inherit;
-  background: var(--color-primary);
-  color: var(--color-white);
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const StyledBaseColor = styled.input`
-  width: 2.5rem;
-  height: 2.5rem;
-`;
-
-const StyledSchemeName = styled.select`
-  background-color: ${(props) =>
-    props.theme === 'light' ? '#f1f2f3' : '#2b3641'};
-  color: ${(props) => (props.theme === 'light' ? '#2b3641' : '#f1f2f3')};
-  height: 3.5rem;
-  border-radius: 1rem;
-  padding: 0 0.5rem;
-`;
+import PalettePreferenceStyles from './PalettePreference.module.css';
 
 export default class PalettePreference extends Component {
   constructor() {
@@ -85,22 +37,29 @@ export default class PalettePreference extends Component {
     const { theme } = this.props;
 
     return (
-      <StyledPalettePreference>
-        <StyledPalettePreferenceBase htmlFor='base-color'>
+      <section className={PalettePreferenceStyles.palettePreference}>
+        <label
+          className={PalettePreferenceStyles.palettePreferenceBase}
+          htmlFor='baseColor'
+        >
           <span className='hide-below-md'>Base</span>
-          <StyledBaseColor
+          <input
             onChange={this.handleBaseColorChange}
-            id='base-color'
+            className={PalettePreferenceStyles.baseColor}
+            id='baseColor'
             type='color'
             value={this.state.baseColor}
           />
-        </StyledPalettePreferenceBase>
+        </label>
 
-        <StyledPalettePreferenceScheme htmlFor='scheme-name'>
+        <label
+          className={PalettePreferenceStyles.palettePreferenceScheme}
+          htmlFor='schemeName'
+        >
           <span className='hide-below-md'>Scheme</span>
-          <StyledSchemeName
-            theme={theme}
-            name='scheme-name'
+          <select
+            className={`${PalettePreferenceStyles.schemeName} bg-${theme}`}
+            name='schemeName'
             id='scheme-name'
             value={this.state.schemeName}
             onChange={this.handleSchemeNameChange}
@@ -112,15 +71,18 @@ export default class PalettePreference extends Component {
             <option value='complement'>Complement</option>
             <option value='analogic-complement'>Analogic-complement</option>
             <option value='triad'>Triad</option>
-          </StyledSchemeName>
-        </StyledPalettePreferenceScheme>
+          </select>
+        </label>
 
-        <StyledPalettePreferenceButton onClick={this.handleGeneratePalette}>
+        <button
+          className={PalettePreferenceStyles.btnGeneratePalette}
+          onClick={this.handleGeneratePalette}
+        >
           <AiFillThunderbolt />
           <span className='hide-below-md'>Generate Palette</span>
           <span className='show-below-md'>Get</span>
-        </StyledPalettePreferenceButton>
-      </StyledPalettePreference>
+        </button>
+      </section>
     );
   }
 }

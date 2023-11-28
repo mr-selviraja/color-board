@@ -31,6 +31,33 @@ body {
   font-size: 1.5rem;
 }
 
+/* Utilities */
+.bg-light,
+.fg-light {
+  color: var(--color-dark);
+}
+
+.bg-light {
+  background: var(--color-white);
+}
+
+.fg-light {
+  background: var(--color-light);
+}
+
+.bg-dark,
+.fg-dark {
+  color: var(--color-white);
+}
+
+.bg-dark {
+  background: var(--color-dark);
+}
+
+.fg-dark {
+  background: var(--color-black);
+}
+
 /* Media queries */
 @media screen and (max-width: 720px) {
   .hide-below-md {

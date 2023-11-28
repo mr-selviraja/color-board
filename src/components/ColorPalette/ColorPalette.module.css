@@ -1,0 +1,12 @@
+.colorPalette {
+  flex-grow: 1;
+  display: flex;
+  width: 100vw;
+  height: 100%;
+}
+
+@media screen and (max-width: 720px) {
+  .colorPalette {
+    flex-direction: column;
+  }
+}

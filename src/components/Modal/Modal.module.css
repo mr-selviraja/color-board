@@ -1,0 +1,19 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalText {
+  font-size: 2rem;
+  font-family: 'Lilita One', sans-serif;
+  text-transform: uppercase;
+  background-color: #505050;
+  color: #f1f2f3;
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
+}
