@@ -4,17 +4,7 @@ import PalettePreference from './components/PalettePreference/PalettePreference'
 import ColorPalette from './components/ColorPalette/ColorPalette';
 import Loader from './components/Loader/Loader';
 import Modal from './components/Modal/Modal';
-import styled from 'styled-components';
-
-const StyledApp = styled.div`
-  background-color: ${(props) =>
-    props.theme === 'light' ? '#dadada' : '#202831'};
-  color: ${(props) => (props.theme === 'light' ? '#2b3641' : '#f1f2f3')};
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-`;
+import AppStyles from './App.module.css';
 
 class App extends Component {
   constructor() {
@@ -88,10 +78,7 @@ class App extends Component {
 
   render() {
     return (
-      <StyledApp
-        theme={this.state.theme}
-        className={`App fg-${this.state.theme}`}
-      >
+      <div className={`${AppStyles.App} fg-${this.state.theme}`}>
         {this.state.isColorCopied ? (
           <Modal copiedColorValue={this.state.copiedColor} />
         ) : (
@@ -113,7 +100,7 @@ class App extends Component {
             )}
           </>
         )}
-      </StyledApp>
+      </div>
     );
   }
 }

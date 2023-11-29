@@ -46,6 +46,7 @@ export default class PalettePreference extends Component {
           <input
             onChange={this.handleBaseColorChange}
             className={PalettePreferenceStyles.baseColor}
+            name='baseColor'
             id='baseColor'
             type='color'
             value={this.state.baseColor}
@@ -60,7 +61,7 @@ export default class PalettePreference extends Component {
           <select
             className={`${PalettePreferenceStyles.schemeName} bg-${theme}`}
             name='schemeName'
-            id='scheme-name'
+            id='schemeName'
             value={this.state.schemeName}
             onChange={this.handleSchemeNameChange}
           >
