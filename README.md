@@ -14,7 +14,7 @@
 2. [Built With](#built-with)
 3. [Prerequisites](#prerequisites)
 4. [Installation](#installation)
-5. [Authors](#authors) -
+5. [Authors](#authors) 
 6. [License](#license)
 
 
@@ -42,8 +42,8 @@
 ```bash
 git clone https://github.com/mr-selviraja/color-board.git
 
-2. Run app
 cd color-board
+
 npm start
 ```
 
